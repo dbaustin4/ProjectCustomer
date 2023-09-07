@@ -10,4 +10,8 @@ public class InspectScript : MonoBehaviour {
   void Update() {
 
   }
+
+  public void Inspect() {
+    Debug.Log("Inspect Executed");
+  }
 }

@@ -4,42 +4,42 @@ using UnityEngine;
 
 public class InteractCheck : MonoBehaviour {
 
-  [SerializeField]
-  private bool usePressed = false;
-  [SerializeField]
+  //[SerializeField] //so we can see in editor if it's true or false
+  //private bool usePressed = false;
+
+  [SerializeField] 
   private bool canInteract = false;
 
   private GameObject desk;
+  private GameObject vape1;
 
-  void Start() {
-    desk = GameObject.FindGameObjectWithTag("Desk");
+  private void Start() {
+    desk = GameObject.FindGameObjectWithTag("Desk"); //find obj with Desk tag
+    vape1 = GameObject.FindGameObjectWithTag("Vape1"); //find obj with Vape1 tag
   }
 
-  void Update() {
-    CheckInput();
+  private void Update() {
+    KeyCheck();
   }
 
   private void FixedUpdate() {
     
   }
 
-  private void CheckInput() {
-    if (Input.GetKeyDown(KeyCode.E)) {
-      if (!usePressed) usePressed = true;
-      else if (usePressed) usePressed = false;
+  private void KeyCheck() { //check keypress for interaction
+    if (canInteract) {
+      if (Input.GetKeyDown(KeyCode.E)) {
+        /*if (!usePressed) usePressed = true; //if false set to true
+        else if (usePressed) usePressed = false; //if true set to false */ 
+        vape1.GetComponent<InspectScript>().Inspect(); //execute Inspect method from InspectScript (attached to obj vape1)
+        canInteract = false;
+      }
     }
   }
 
-  private void Interaction() {
-    /*if (canInteract) {
-
-    }*/
-  }
-
-  private void OnCollisionEnter(Collision collision) {
-     if(collision.gameObject == desk) {
+  private void OnCollisionEnter(Collision collision) { //check collision
+    if (collision.gameObject == desk) { //check if we collide with desk
       canInteract = true;
-      Debug.Log("collided with desk");
     }
   }
 }
