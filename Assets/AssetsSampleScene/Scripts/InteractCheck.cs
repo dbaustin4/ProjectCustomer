@@ -52,8 +52,6 @@ public class InteractCheck : MonoBehaviour {
         canInteract = false;
          }
         // array of vapes better seen in unity in the inspectobj thingie
-
-            
     }
   }
 
