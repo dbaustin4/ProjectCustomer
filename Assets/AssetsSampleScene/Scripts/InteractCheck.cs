@@ -15,6 +15,7 @@ public class InteractCheck : MonoBehaviour {
   private GameObject vape1;
 
     //dw abt the formatting it s 4am
+
     public GameObject Inspection; //the place where objects get inspected look in the project
     //there s like all the 'vapes' in a lil corner with a camera i ll explain the camera in person <3
     public InspectScript inspectionObj; //the array of vapes also look in the project it s basically the parent of the 3 obj that are gonna rotate
