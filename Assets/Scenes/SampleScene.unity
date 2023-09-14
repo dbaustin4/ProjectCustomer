@@ -244,7 +244,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113765500}
   m_Layer: 0
-  m_Name: CameraPos1
+  m_Name: CameraPos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -263,7 +263,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1635700579}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 17.967, y: 168.767, z: -3.767}
 --- !u!1001 &181946619
 PrefabInstance:
@@ -739,10 +739,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inspection: {fileID: 715055716}
   targetTransforms:
-  - {fileID: 113765500}
-  - {fileID: 420364201}
   - {fileID: 1869227595}
-  transitionDuration: 2
+  - {fileID: 420364201}
+  - {fileID: 113765500}
+  transitionDuration: 1
   currentTarget: 0
 --- !u!1 &642547086
 GameObject:
@@ -2007,9 +2007,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 113765500}
-  - {fileID: 420364201}
   - {fileID: 1869227595}
+  - {fileID: 420364201}
+  - {fileID: 113765500}
   m_Father: {fileID: 771005254}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2236,7 +2236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869227595}
   m_Layer: 0
-  m_Name: CameraPos3
+  m_Name: CameraPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2249,14 +2249,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869227594}
-  m_LocalRotation: {x: -0.020069962, y: 0.92415893, z: -0.1549485, w: 0.3485952}
-  m_LocalPosition: {x: -16.96999, y: 16.17, z: 14.080004}
+  m_LocalRotation: {x: 0.103580624, y: 0.8922793, z: -0.25312248, w: 0.35921824}
+  m_LocalPosition: {x: -20.7, y: 24.1, z: 23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1635700579}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 15.807, y: 137.46, z: -8.675}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 31.744, y: 136.199, z: 0.202}
 --- !u!1 &1906427714
 GameObject:
   m_ObjectHideFlags: 0
