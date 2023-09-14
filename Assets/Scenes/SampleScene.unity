@@ -1979,6 +1979,7 @@ MonoBehaviour:
   - {fileID: 1930693580}
   - {fileID: 380488997}
   - {fileID: 1968960817}
+  exitButton: {fileID: 835756117}
 --- !u!1 &1635700578
 GameObject:
   m_ObjectHideFlags: 0
