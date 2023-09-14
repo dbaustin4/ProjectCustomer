@@ -8,6 +8,9 @@ public class InspectScript : MonoBehaviour {
   public GameObject[] InspectionObjects; // array with all the vapes
   private int currIndex; // picks which vape it shows
 
+  [SerializeField]
+  private GameObject exitButton;
+
   void Start() {
     Debug.Log("hi mara :)");
 
@@ -27,6 +30,7 @@ public class InspectScript : MonoBehaviour {
   public void TurnOffInspect() {
 
     InspectionObjects[currIndex].SetActive(false); //turns it off bruh
+    exitButton.SetActive(false); //set button to false again
 
   }
 
