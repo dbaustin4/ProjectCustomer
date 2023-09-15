@@ -39,9 +39,10 @@ public class Hover : MonoBehaviour {
       color.a = 0.6f;
       if (Input.GetMouseButtonDown(0)) {
         if (gameObject != dissectionVape) exitButton.SetActive(true);
-
-        Inspection.SetActive(true);
-        inspectionObj.Inspect(index);
+        if (!gameObject.CompareTag("Collectible")){
+          Inspection.SetActive(true);
+          inspectionObj.Inspect(index);
+        }
       }
 
     }
