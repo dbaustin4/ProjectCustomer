@@ -6,17 +6,32 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+
+    public bool isPaused = false;
+
+    private void Update()
+    {
+        // Check for the "P" key press to toggle the pause menu.
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("P key pressed");
+        }
+    }
     public void Pause()
     {
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
+        isPaused = true;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
-        Time.timeScale = 0;
+        Time.timeScale = 1;
+        isPaused = false;
+
     }
+
     public void Settings()
     {
         //this one might need rethinking since I want to change the settings without closing the game
