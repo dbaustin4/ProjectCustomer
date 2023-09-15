@@ -2,15 +2,20 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: HalfToneStripe_SS
+  m_Name: HalfToneStripe_SS 1
   m_Shader: {fileID: 4800000, guid: 933f24cde1e3f6a41818f56d729421ab, type: 3}
-  m_ShaderKeywords: _HALFTONESHAPE_STRIPE _SPECULARHIGHLIGHTS_OFF _SPECULAR_COLOR
-    _STEPVIARAMPTEXTURE_ON _TOON_SHADING_ON
+  m_ValidKeywords:
+  - _HALFTONESHAPE_STRIPE
+  - _SPECULARHIGHLIGHTS_OFF
+  - _TOON_SHADING_ON
+  m_InvalidKeywords:
+  - _SPECULAR_COLOR
+  - _STEPVIARAMPTEXTURE_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -138,6 +143,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _ActiveRenderFeature: 1
     - _AlphaClip: 0
@@ -290,7 +296,7 @@ Material:
     - _ZWrite: 1
     - _brushScale: 6
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.6367924, b: 0.9081565, a: 1}
+    - _BaseColor: {r: 0.12285118, g: 0.05211819, b: 0.2264151, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _ColorDim: {r: 0.5660378, g: 0.258989, b: 0.258989, a: 1}
     - _ColorDimCurve: {r: 0.85023, g: 0.85034, b: 0.85045, a: 0.85056}

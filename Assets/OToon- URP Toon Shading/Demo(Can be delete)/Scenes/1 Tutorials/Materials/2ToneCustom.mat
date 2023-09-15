@@ -18,12 +18,11 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 3000
+  m_CustomRenderQueue: 2000
   stringTagMap:
-    RenderType: Transparent
+    RenderType: Opaque
   disabledShaderPasses:
   - SRPDEFAULTUNLIT
-  - SHADOWCASTER
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -166,7 +165,7 @@ Material:
     - _DitherThreshold: 1
     - _DotSize: 0.7
     - _DotTilling: 30
-    - _DstBlend: 10
+    - _DstBlend: 0
     - _EnabledHairSpec: 0
     - _EnvironmentReflections: 1
     - _FaceShadowMapEnabled: 0
@@ -274,11 +273,11 @@ Material:
     - _SpecularSmoothness: 1
     - _SpecularStepThreshold: 0.013
     - _SpherizeNormalEnabled: 0
-    - _SrcBlend: 5
+    - _SrcBlend: 1
     - _StencilComp: 0
     - _StencilRef: 0
     - _StepViaRampTexture: 1
-    - _Surface: 1
+    - _Surface: 0
     - _TOON_SHADING: 1
     - _TextureBlendingMode: 0
     - _TextureImpact: 1
@@ -293,7 +292,7 @@ Material:
     - _UseRampTextureColor: 0
     - _VertexColorsEnabled: 0
     - _WorkflowMode: 1
-    - _ZWrite: 0
+    - _ZWrite: 1
     - _brushScale: 8
     m_Colors:
     - _BaseColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
