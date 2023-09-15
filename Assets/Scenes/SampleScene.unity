@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 52430917}
   - component: {fileID: 52430920}
   m_Layer: 6
-  m_Name: Vape R (1)
+  m_Name: Vape R interacted
   m_TagString: Vape1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -256,7 +256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 113765500}
   m_Layer: 0
-  m_Name: CameraPos1
+  m_Name: CameraPos3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -275,7 +275,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1635700579}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 17.967, y: 168.767, z: -3.767}
 --- !u!1001 &181946619
 PrefabInstance:
@@ -357,7 +357,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb918a5810ebf51469b589a7980d3d29,
         type: 3}
       propertyPath: m_Name
-      value: squonk_vape
+      value: squonk_vape click
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb918a5810ebf51469b589a7980d3d29, type: 3}
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 380489000}
   - component: {fileID: 380489003}
   m_Layer: 6
-  m_Name: Vape B (3)
+  m_Name: Vape B interacted
   m_TagString: Vape1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -729,14 +729,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 567633635}
-  m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3, y: 7, z: -14}
   m_LocalScale: {x: 0.5000001, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 771005254}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &567633640
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -751,10 +751,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Inspection: {fileID: 715055716}
   targetTransforms:
-  - {fileID: 113765500}
-  - {fileID: 420364201}
   - {fileID: 1869227595}
-  transitionDuration: 2
+  - {fileID: 420364201}
+  - {fileID: 113765500}
+  transitionDuration: 1
   currentTarget: 0
 --- !u!1 &642547086
 GameObject:
@@ -1014,7 +1014,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &835756118
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1349,7 +1349,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: eb918a5810ebf51469b589a7980d3d29,
         type: 3}
       propertyPath: m_Name
-      value: squonk_vape
+      value: squonk_vape interacted
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: eb918a5810ebf51469b589a7980d3d29,
         type: 3}
@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 1133500270}
   - component: {fileID: 1133500274}
   m_Layer: 0
-  m_Name: Vape R
+  m_Name: Vape R click
   m_TagString: Vape1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1878,7 +1878,7 @@ GameObject:
   - component: {fileID: 1302594363}
   - component: {fileID: 1302594367}
   m_Layer: 0
-  m_Name: Vape G
+  m_Name: Vape G click
   m_TagString: Vape1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1978,6 +1978,8 @@ MonoBehaviour:
   Inspection: {fileID: 715055716}
   inspectionObj: {fileID: 1584420738}
   index: 1
+  dissectionVape: {fileID: 1978993348}
+  exitButton: {fileID: 835756117}
 --- !u!1 &1468800999 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5917256396944314234, guid: eb918a5810ebf51469b589a7980d3d29,
@@ -2133,6 +2135,7 @@ MonoBehaviour:
   - {fileID: 1930693580}
   - {fileID: 380488997}
   - {fileID: 1968960817}
+  exitButton: {fileID: 835756117}
 --- !u!1 &1635700578
 GameObject:
   m_ObjectHideFlags: 0
@@ -2161,9 +2164,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 113765500}
-  - {fileID: 420364201}
   - {fileID: 1869227595}
+  - {fileID: 420364201}
+  - {fileID: 113765500}
   m_Father: {fileID: 771005254}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2278,7 +2281,7 @@ GameObject:
   - component: {fileID: 1786097610}
   - component: {fileID: 1786097614}
   m_Layer: 0
-  m_Name: Vape B
+  m_Name: Vape B click
   m_TagString: Vape1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2378,6 +2381,8 @@ MonoBehaviour:
   Inspection: {fileID: 715055716}
   inspectionObj: {fileID: 1584420738}
   index: 2
+  dissectionVape: {fileID: 1978993348}
+  exitButton: {fileID: 835756117}
 --- !u!1 &1869227594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2388,7 +2393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1869227595}
   m_Layer: 0
-  m_Name: CameraPos3
+  m_Name: CameraPos1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2401,14 +2406,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1869227594}
-  m_LocalRotation: {x: -0.020069962, y: 0.92415893, z: -0.1549485, w: 0.3485952}
-  m_LocalPosition: {x: -16.96999, y: 16.17, z: 14.080004}
+  m_LocalRotation: {x: 0.103580624, y: 0.8922793, z: -0.25312248, w: 0.35921824}
+  m_LocalPosition: {x: -20.7, y: 24.1, z: 23}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1635700579}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 15.807, y: 137.46, z: -8.675}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 31.744, y: 136.199, z: 0.202}
 --- !u!1 &1906427714
 GameObject:
   m_ObjectHideFlags: 0
@@ -2520,7 +2525,7 @@ GameObject:
   - component: {fileID: 1930693583}
   - component: {fileID: 1930693586}
   m_Layer: 6
-  m_Name: Vape G (2)
+  m_Name: Vape G interacted
   m_TagString: Vape1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3201,6 +3206,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 920983ce85c669a4788c1d751b0c771b, type: 3}
   - {fileID: 8300000, guid: 1b139d763b5187a46928a3f3066111fe, type: 3}
   flySpeed: 1000
+  exitButton: {fileID: 835756117}
 --- !u!114 &1968960824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3234,6 +3240,8 @@ MonoBehaviour:
   Inspection: {fileID: 715055716}
   inspectionObj: {fileID: 1584420738}
   index: 3
+  dissectionVape: {fileID: 1978993348}
+  exitButton: {fileID: 835756117}
 --- !u!65 &1978993350
 BoxCollider:
   m_ObjectHideFlags: 0
