@@ -9,14 +9,7 @@ public class PauseMenu : MonoBehaviour
 
     public bool isPaused = false;
 
-    private void Update()
-    {
-        // Check for the "P" key press to toggle the pause menu.
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Debug.Log("P key pressed");
-        }
-    }
+ 
     public void Pause()
     {
         pauseMenu.SetActive(true);
