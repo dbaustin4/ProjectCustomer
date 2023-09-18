@@ -19,9 +19,16 @@ public class CameraSwitch : MonoBehaviour
     
     private bool isTransitioning = false;
 
+    [SerializeField]
+    private AudioClip cameraSound;
+    private AudioSource audioSource;
+
+
     void Start()
     {
         SetCameraToCurrentTarget(); //start off with camera pos/rot of the current obj script is attached to
+        audioSource = GetComponent<AudioSource>();
+        
     }
     private void Update()
     {
@@ -35,10 +42,14 @@ public class CameraSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             SetPreviousTarget(); //prev target pos/rot
+            audioSource.clip= cameraSound;
+            audioSource.Play();
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             SetNextTarget(); //next target pos/rot
+            audioSource.clip = cameraSound;
+            audioSource.Play();
         }
     }
 
