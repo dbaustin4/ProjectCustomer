@@ -17,11 +17,11 @@ public class Collectibles : MonoBehaviour {
   [SerializeField]
   private int collectableAmount;
 
-
   private bool voicelinePlaying = false;
   private bool[] pieceCollected;
   private int amountCollected = 0;
-  
+  private int currentSoundIndex = 0;
+
 
   void Start() {
     pieceCollected = new bool[vapePieces.Length];
@@ -39,42 +39,34 @@ public class Collectibles : MonoBehaviour {
       if (Physics.Raycast(ray, out hitInfo)) {
         GameObject obj = hitInfo.collider.gameObject;
 
-
         for (int i = 0; i < vapePieces.Length; i++) {
-          if (obj == vapePieces[i] && !pieceCollected[i]) {
+          if (obj == vapePieces[i]) {
             Debug.Log("piece " + i + " clicked");
-            PlaySound(vapePieces[i], i);
-            Debug.Log(pieceCollected[i]);
+            PlaySound(vapePieces[i]);
 
-            pieceCollected[i] = true;
-
-            if (pieceCollected[i]) {
-              Debug.Log("should teleport now");
-              pieceCollected[i] = false;
-              collectButton.SetActive(false);
+            if (amountCollected < collectableAmount) {
               amountCollected += 1;
-              if (amountCollected >= collectableAmount) {
-                Debug.Log("allow other voiceline to play");
-              }
+              collectButton.SetActive(false);
+              TeleportToTarget(vapePieces[i], i);
+            }
+            else {
+              Debug.Log("allow other voiceline to play");
             }
 
-            
-
-              TeleportToTarget(vapePieces[i], i);
             break; //end loop after finding clicked vape
           }
-
         }
       }
     }
   }
 
-  void PlaySound(GameObject obj, int soundIndex) {
+  void PlaySound(GameObject obj) {
     AudioSource audioSource = obj.GetComponent<AudioSource>();
-    if (audioSource != null && voiceLines.Length > soundIndex && voiceLines[soundIndex] != null) {
+    if (audioSource != null && voiceLines.Length > currentSoundIndex && voiceLines[currentSoundIndex] != null) {
       voicelinePlaying = true;
-      audioSource.PlayOneShot(voiceLines[soundIndex]);
+      audioSource.PlayOneShot(voiceLines[currentSoundIndex]);
       StartCoroutine(WaitForVoiceline(audioSource.clip.length));
+      currentSoundIndex++;
     }
   }
 
