@@ -10,6 +10,8 @@ public class Collectibles : MonoBehaviour {
   private Transform[] targetPositions;
   [SerializeField]
   private GameObject[] vapePieces;
+    //[SerializeField]
+    //private int voicelineIndex;
 
   private bool voicelinePlaying = false;
   private bool[] pieceClicked;
@@ -35,7 +37,7 @@ public class Collectibles : MonoBehaviour {
             Debug.Log("piece " + i + " clicked");
             pieceClicked[i] = true;
             TeleportToTarget(vapePieces[i], i);
-            PlaySound(vapePieces[i], i);
+                        PlaySound(vapePieces[i], i);
             break; //end loop after finding clicked vape
           }
         }
