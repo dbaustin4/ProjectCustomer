@@ -42,14 +42,12 @@ public class CameraSwitch : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             SetPreviousTarget(); //prev target pos/rot
-            audioSource.clip= cameraSound;
-            audioSource.Play();
+            
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
             SetNextTarget(); //next target pos/rot
-            audioSource.clip = cameraSound;
-            audioSource.Play();
+            
         }
     }
 
@@ -62,22 +60,26 @@ public class CameraSwitch : MonoBehaviour
         }
     }
 
-    private void SetNextTarget()
+    private void SetPreviousTarget()
     { //go to previous pos/rot from list
         if (isTransitioning)
             return; //exit current method from executing
 
         currentTarget = (currentTarget - 1 + targetTransforms.Count) % targetTransforms.Count; //calculate number of previous target, looping around list if needed (if last go to first, if first go to last)
         StartCoroutine(TransitionCamera(targetTransforms[currentTarget])); //start transition to previous target 
+        audioSource.clip = cameraSound;
+        audioSource.Play();
     }
 
-    private void SetPreviousTarget()
+    private void SetNextTarget()
     { //go to next pos/rot from list
         if (isTransitioning)
             return; //exit current method from executing
 
         currentTarget = (currentTarget + 1) % targetTransforms.Count; //calculate number of next target, looping around list if needed (if last go to first, if first go to last)
         StartCoroutine(TransitionCamera(targetTransforms[currentTarget])); //start transition to next target 
+        audioSource.clip = cameraSound;
+        audioSource.Play();
     }
 
     IEnumerator TransitionCamera(Transform targetTransform)
