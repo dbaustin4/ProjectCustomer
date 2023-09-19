@@ -11,14 +11,20 @@ public class Collectibles : MonoBehaviour {
   [SerializeField]
   private GameObject[] vapePieces;
   [SerializeField]
-  private int voicelineIndex = 0;
+  private Camera mainCamera;
+  [SerializeField]
+  private GameObject collectButton;
+  [SerializeField]
+  private int collectableAmount;
 
 
   private bool voicelinePlaying = false;
-  private bool[] pieceClicked;
+  private bool[] pieceCollected;
+  private int amountCollected = 0;
+  
 
   void Start() {
-    pieceClicked = new bool[vapePieces.Length];
+    pieceCollected = new bool[vapePieces.Length];
   }
 
   void Update() {
@@ -27,21 +33,37 @@ public class Collectibles : MonoBehaviour {
 
   void CheckObject() {
     if (!voicelinePlaying && Input.GetMouseButtonDown(0)) {
-      Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
       RaycastHit hitInfo;
       if (Physics.Raycast(ray, out hitInfo)) {
         GameObject obj = hitInfo.collider.gameObject;
 
+
         for (int i = 0; i < vapePieces.Length; i++) {
-          if (obj == vapePieces[i] && !pieceClicked[i]) {
+          if (obj == vapePieces[i] && !pieceCollected[i]) {
             Debug.Log("piece " + i + " clicked");
-            pieceClicked[i] = true;
-            TeleportToTarget(vapePieces[i], i);
-            PlaySound(vapePieces[i], voicelineIndex);
-            voicelineIndex +=1;
+            PlaySound(vapePieces[i], i);
+            Debug.Log(pieceCollected[i]);
+
+            pieceCollected[i] = true;
+
+            if (pieceCollected[i]) {
+              Debug.Log("should teleport now");
+              pieceCollected[i] = false;
+              collectButton.SetActive(false);
+              amountCollected += 1;
+              if (amountCollected >= collectableAmount) {
+                Debug.Log("allow other voiceline to play");
+              }
+            }
+
+            
+
+              TeleportToTarget(vapePieces[i], i);
             break; //end loop after finding clicked vape
           }
+
         }
       }
     }
@@ -59,6 +81,7 @@ public class Collectibles : MonoBehaviour {
   IEnumerator WaitForVoiceline(float duration) {
     yield return new WaitForSeconds(duration);
     voicelinePlaying = false;
+    collectButton.SetActive(true);
   }
 
   void TeleportToTarget(GameObject obj, int targetIndex) {
@@ -67,4 +90,12 @@ public class Collectibles : MonoBehaviour {
       obj.transform.position = target.position;
     }
   }
+
+  public void SetCollectedTrue(int index) {
+    if (index >= 0 && index < pieceCollected.Length) {
+      pieceCollected[index] = true;
+      Debug.Log("collected " + index + " is true");
+    }
+  }
+
 }

@@ -34,15 +34,17 @@ public class Hover : MonoBehaviour {
 
     if (GetComponent<Collider>().Raycast(ray, out hit, 10f)) // 10f is max distance at which the effect works
     {
-      Debug.Log("hovering over " + gameObject.name);
+      //Debug.Log("hovering over " + gameObject.name);
 
       color.a = 0.6f;
       if (Input.GetMouseButtonDown(0)) {
         if (gameObject != dissectionVape) exitButton.SetActive(true);
-        if (!gameObject.CompareTag("Collectible")){
-          Inspection.SetActive(true);
-          inspectionObj.Inspect(index);
+        Inspection.SetActive(true);
+        inspectionObj.Inspect(index);
+        if (gameObject.CompareTag("Collectible")) {
+          exitButton.SetActive(false);
         }
+
       }
 
     }
