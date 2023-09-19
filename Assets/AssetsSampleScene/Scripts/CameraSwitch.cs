@@ -62,7 +62,7 @@ public class CameraSwitch : MonoBehaviour
         }
     }
 
-    private void SetPreviousTarget()
+    private void SetNextTarget()
     { //go to previous pos/rot from list
         if (isTransitioning)
             return; //exit current method from executing
@@ -71,7 +71,7 @@ public class CameraSwitch : MonoBehaviour
         StartCoroutine(TransitionCamera(targetTransforms[currentTarget])); //start transition to previous target 
     }
 
-    private void SetNextTarget()
+    private void SetPreviousTarget()
     { //go to next pos/rot from list
         if (isTransitioning)
             return; //exit current method from executing
