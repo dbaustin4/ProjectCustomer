@@ -10,14 +10,21 @@ public class Collectibles : MonoBehaviour {
   private Transform[] targetPositions;
   [SerializeField]
   private GameObject[] vapePieces;
-    //[SerializeField]
-    //private int voicelineIndex;
+  [SerializeField]
+  private Camera mainCamera;
+  [SerializeField]
+  private GameObject collectButton;
+  [SerializeField]
+  private int collectableAmount;
 
   private bool voicelinePlaying = false;
-  private bool[] pieceClicked;
+  private bool[] pieceCollected;
+  private int amountCollected = 0;
+  private int currentSoundIndex = 0;
+
 
   void Start() {
-    pieceClicked = new bool[vapePieces.Length];
+    pieceCollected = new bool[vapePieces.Length];
   }
 
   void Update() {
@@ -26,18 +33,26 @@ public class Collectibles : MonoBehaviour {
 
   void CheckObject() {
     if (!voicelinePlaying && Input.GetMouseButtonDown(0)) {
-      Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+      Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
       RaycastHit hitInfo;
       if (Physics.Raycast(ray, out hitInfo)) {
         GameObject obj = hitInfo.collider.gameObject;
 
         for (int i = 0; i < vapePieces.Length; i++) {
-          if (obj == vapePieces[i] && !pieceClicked[i]) {
+          if (obj == vapePieces[i]) {
             Debug.Log("piece " + i + " clicked");
-            pieceClicked[i] = true;
-            TeleportToTarget(vapePieces[i], i);
-                        PlaySound(vapePieces[i], i);
+            PlaySound(vapePieces[i]);
+
+            if (amountCollected < collectableAmount) {
+              amountCollected += 1;
+              collectButton.SetActive(false);
+              TeleportToTarget(vapePieces[i], i);
+            }
+            else {
+              Debug.Log("allow other voiceline to play");
+            }
+
             break; //end loop after finding clicked vape
           }
         }
@@ -45,18 +60,20 @@ public class Collectibles : MonoBehaviour {
     }
   }
 
-  void PlaySound(GameObject obj, int soundIndex) {
+  void PlaySound(GameObject obj) {
     AudioSource audioSource = obj.GetComponent<AudioSource>();
-    if (audioSource != null && voiceLines.Length > soundIndex && voiceLines[soundIndex] != null) {
+    if (audioSource != null && voiceLines.Length > currentSoundIndex && voiceLines[currentSoundIndex] != null) {
       voicelinePlaying = true;
-      audioSource.PlayOneShot(voiceLines[soundIndex]);
+      audioSource.PlayOneShot(voiceLines[currentSoundIndex]);
       StartCoroutine(WaitForVoiceline(audioSource.clip.length));
+      currentSoundIndex++;
     }
   }
 
   IEnumerator WaitForVoiceline(float duration) {
     yield return new WaitForSeconds(duration);
     voicelinePlaying = false;
+    collectButton.SetActive(true);
   }
 
   void TeleportToTarget(GameObject obj, int targetIndex) {
@@ -65,4 +82,12 @@ public class Collectibles : MonoBehaviour {
       obj.transform.position = target.position;
     }
   }
+
+  public void SetCollectedTrue(int index) {
+    if (index >= 0 && index < pieceCollected.Length) {
+      pieceCollected[index] = true;
+      Debug.Log("collected " + index + " is true");
+    }
+  }
+
 }
