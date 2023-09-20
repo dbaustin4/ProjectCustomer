@@ -23,6 +23,8 @@ public class Collectibles : MonoBehaviour {
   private int currentSoundIndex = 0;
   private Hover killHover;
 
+  public bool doneCollecting = false;
+
   private void Start() {
     pieceCollected = new bool[vapePieces.Length];
   }
@@ -41,7 +43,7 @@ public class Collectibles : MonoBehaviour {
 
         for (int i = 0; i < vapePieces.Length; i++) {
           if (obj == vapePieces[i]) {
-            Debug.Log("piece " + i + " clicked");
+            //Debug.Log("piece " + i + " clicked");
             PlaySound(vapePieces[i]);
 
             killHover = vapePieces[i].GetComponent<Hover>();
@@ -52,9 +54,9 @@ public class Collectibles : MonoBehaviour {
               vapePieces[i] = null;
             }
             else {
-              Debug.Log("allow other voiceline to play");
+              Debug.Log("all pieces collected");
+              doneCollecting = true;
             }
-
             break; //end loop after finding clicked piece
           }
         }
@@ -89,7 +91,7 @@ public class Collectibles : MonoBehaviour {
   public void SetCollectedTrue(int index) {
     if (index >= 0 && index < pieceCollected.Length) {
       pieceCollected[index] = true;
-      Debug.Log("collected " + index + " is true");
+      //Debug.Log("collected " + index + " is true");
     }
   }
 

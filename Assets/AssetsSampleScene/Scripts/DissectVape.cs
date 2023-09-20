@@ -40,7 +40,7 @@ public class DissectVape : MonoBehaviour {
         currentPiece++;
       }
       else {
-        Debug.Log("all pieces dissected.");
+        //Debug.Log("all pieces dissected.");
         exitButton.SetActive(true); //make exit button appear again
       }
     }
