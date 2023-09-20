@@ -53,7 +53,7 @@ public class Collectibles : MonoBehaviour {
               Debug.Log("allow other voiceline to play");
             }
 
-            break; //end loop after finding clicked vape
+            break; //end loop after finding clicked piece
           }
         }
       }
