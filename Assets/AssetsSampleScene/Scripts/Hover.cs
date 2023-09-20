@@ -32,7 +32,7 @@ public class Hover : MonoBehaviour {
     Color color = GetComponent<MeshRenderer>().material.color;
 
 
-    if (GetComponent<Collider>().Raycast(ray, out hit, 20f)) // 10f is max distance at which the effect works
+    if (GetComponent<Collider>().Raycast(ray, out hit, 30f)) // 10f is max distance at which the effect works
     {
       Debug.Log("hovering over " + gameObject.name);
 
