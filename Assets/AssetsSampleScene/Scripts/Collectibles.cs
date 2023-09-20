@@ -21,17 +21,17 @@ public class Collectibles : MonoBehaviour {
   private bool[] pieceCollected;
   private int amountCollected = 0;
   private int currentSoundIndex = 0;
+  private Hover killHover;
 
-
-  void Start() {
+  private void Start() {
     pieceCollected = new bool[vapePieces.Length];
   }
 
-  void Update() {
+  private void Update() {
     CheckObject();
   }
 
-  void CheckObject() {
+  private void CheckObject() {
     if (!voicelinePlaying && Input.GetMouseButtonDown(0)) {
       Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
@@ -39,30 +39,30 @@ public class Collectibles : MonoBehaviour {
       if (Physics.Raycast(ray, out hitInfo)) {
         GameObject obj = hitInfo.collider.gameObject;
 
-        
-          for (int i = 0; i < vapePieces.Length; i++) {
-            if (obj == vapePieces[i]) {
-              Debug.Log("piece " + i + " clicked");
-              PlaySound(vapePieces[i]);
+        for (int i = 0; i < vapePieces.Length; i++) {
+          if (obj == vapePieces[i]) {
+            Debug.Log("piece " + i + " clicked");
+            PlaySound(vapePieces[i]);
 
-              if (amountCollected < collectableAmount) {
-              
-                amountCollected += 1;
+            killHover = vapePieces[i].GetComponent<Hover>();
+            
+            if (amountCollected < collectableAmount) {
+              amountCollected += 1;
               TeleportToTarget(vapePieces[i], i);
-              }
-              else {
-                Debug.Log("allow other voiceline to play");
-              }
-
-              break; //end loop after finding clicked piece
+              vapePieces[i] = null;
             }
+            else {
+              Debug.Log("allow other voiceline to play");
+            }
+
+            break; //end loop after finding clicked piece
           }
-        
+        }
       }
     }
   }
 
-  void PlaySound(GameObject obj) {
+  private void PlaySound(GameObject obj) {
     AudioSource audioSource = obj.GetComponent<AudioSource>();
     if (audioSource != null && voiceLines.Length > currentSoundIndex && voiceLines[currentSoundIndex] != null) {
       voicelinePlaying = true;
@@ -78,12 +78,13 @@ public class Collectibles : MonoBehaviour {
     collectButton.SetActive(true);
   }
 
-  void TeleportToTarget(GameObject obj, int targetIndex) {
+  private void TeleportToTarget(GameObject obj, int targetIndex) {
     if (targetIndex >= 0 && targetIndex < targetPositions.Length) {
       Transform target = targetPositions[targetIndex];
       obj.transform.position = target.position;
     }
   }
+
 
   public void SetCollectedTrue(int index) {
     if (index >= 0 && index < pieceCollected.Length) {
@@ -92,8 +93,8 @@ public class Collectibles : MonoBehaviour {
     }
   }
 
-  public void InactivateCollectButton() {
+  public void InactivateCollectButtonAndHover() {
     collectButton.SetActive(false);
+    killHover.enabled = false;
   }
-
 }
