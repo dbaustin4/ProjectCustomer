@@ -39,23 +39,25 @@ public class Collectibles : MonoBehaviour {
       if (Physics.Raycast(ray, out hitInfo)) {
         GameObject obj = hitInfo.collider.gameObject;
 
-        for (int i = 0; i < vapePieces.Length; i++) {
-          if (obj == vapePieces[i]) {
-            Debug.Log("piece " + i + " clicked");
-            PlaySound(vapePieces[i]);
+        
+          for (int i = 0; i < vapePieces.Length; i++) {
+            if (obj == vapePieces[i]) {
+              Debug.Log("piece " + i + " clicked");
+              PlaySound(vapePieces[i]);
 
-            if (amountCollected < collectableAmount) {
-              amountCollected += 1;
-              collectButton.SetActive(false);
+              if (amountCollected < collectableAmount) {
+              
+                amountCollected += 1;
               TeleportToTarget(vapePieces[i], i);
-            }
-            else {
-              Debug.Log("allow other voiceline to play");
-            }
+              }
+              else {
+                Debug.Log("allow other voiceline to play");
+              }
 
-            break; //end loop after finding clicked piece
+              break; //end loop after finding clicked piece
+            }
           }
-        }
+        
       }
     }
   }
@@ -88,6 +90,10 @@ public class Collectibles : MonoBehaviour {
       pieceCollected[index] = true;
       Debug.Log("collected " + index + " is true");
     }
+  }
+
+  public void InactivateCollectButton() {
+    collectButton.SetActive(false);
   }
 
 }
