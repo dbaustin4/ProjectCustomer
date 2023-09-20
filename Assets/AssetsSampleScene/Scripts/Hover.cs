@@ -16,6 +16,8 @@ public class Hover : MonoBehaviour {
   private GameObject dissectionVape;
   [SerializeField]
   private GameObject exitButton;
+  [SerializeField]
+  private Collectibles collectibles;
 
   void Start() {
 
@@ -44,7 +46,6 @@ public class Hover : MonoBehaviour {
         if (gameObject.CompareTag("Collectible")) {
           exitButton.SetActive(false);
         }
-
       }
 
     }
@@ -52,5 +53,6 @@ public class Hover : MonoBehaviour {
 
     GetComponent<MeshRenderer>().material.color = color;
 
+ 
   }
 }

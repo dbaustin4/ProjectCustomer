@@ -845,6 +845,7 @@ MonoBehaviour:
   index: 13
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 0}
 --- !u!65 &26859413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5067,6 +5068,7 @@ MonoBehaviour:
   mainCamera: {fileID: 1181544289}
   collectButton: {fileID: 806372503}
   collectableAmount: 6
+  killHover: 0
 --- !u!4 &300270965
 Transform:
   m_ObjectHideFlags: 0
@@ -5873,6 +5875,7 @@ MonoBehaviour:
   index: 16
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 0}
 --- !u!65 &314641980
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6157,6 +6160,7 @@ MonoBehaviour:
   index: 11
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &347788656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6781,6 +6785,7 @@ MonoBehaviour:
   index: 12
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &368296557
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8007,6 +8012,7 @@ MonoBehaviour:
   index: 12
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 0}
 --- !u!65 &456368481
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8484,6 +8490,7 @@ MonoBehaviour:
   index: 1
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &484787362
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9977,6 +9984,7 @@ MonoBehaviour:
   index: 3
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &603716187
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10328,6 +10336,7 @@ MonoBehaviour:
   index: 9
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &631445232
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11920,6 +11929,7 @@ MonoBehaviour:
   index: 14
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &789630207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12475,7 +12485,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 300270964}
         m_TargetAssemblyTypeName: Collectibles, Assembly-CSharp
-        m_MethodName: InactivateCollectButton
+        m_MethodName: InactivateCollectButtonAndHover
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -12577,6 +12587,7 @@ MonoBehaviour:
   index: 0
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 0}
 --- !u!65 &811604367
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13252,6 +13263,7 @@ MonoBehaviour:
   index: 2
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &850350072
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15836,6 +15848,7 @@ MonoBehaviour:
   index: 8
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &1014378540
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16027,6 +16040,7 @@ MonoBehaviour:
   index: 14
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 0}
 --- !u!65 &1024239179
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16710,6 +16724,7 @@ MonoBehaviour:
   index: 4
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &1085124919
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18471,7 +18486,7 @@ MonoBehaviour:
   - {fileID: 1278416279}
   - {fileID: 117012918}
   - {fileID: 270604131}
-  transitionDuration: 1.5
+  transitionDuration: 1
   currentTarget: 0
   cameraSound: {fileID: 8300000, guid: 7e35bd6c92546e44185976eb73f0b323, type: 3}
 --- !u!114 &1181544287
@@ -20271,6 +20286,7 @@ MonoBehaviour:
   index: 7
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &1297177652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25560,6 +25576,7 @@ MonoBehaviour:
   index: 15
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 0}
 --- !u!65 &1772792109
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26985,6 +27002,7 @@ MonoBehaviour:
   index: 6
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &1863761690
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -27057,6 +27075,7 @@ MonoBehaviour:
   index: 16
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &1872518593
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30251,6 +30270,7 @@ MonoBehaviour:
   index: 10
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &272792728931464553
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -31202,6 +31222,7 @@ MonoBehaviour:
   index: 0
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &919132147865917691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37886,6 +37907,7 @@ MonoBehaviour:
   index: 15
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &6785291144689645848
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37916,6 +37938,7 @@ MonoBehaviour:
   index: 13
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &6785291144689645850
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -40482,6 +40505,7 @@ MonoBehaviour:
   index: 5
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
+  collectibles: {fileID: 300270964}
 --- !u!65 &8879367954349695194
 BoxCollider:
   m_ObjectHideFlags: 0
