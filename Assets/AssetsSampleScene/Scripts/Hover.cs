@@ -36,7 +36,7 @@ public class Hover : MonoBehaviour {
 
     if (GetComponent<Collider>().Raycast(ray, out hit, 30f)) // 10f is max distance at which the effect works
     {
-      Debug.Log("hovering over " + gameObject.name);
+      //Debug.Log("hovering over " + gameObject.name);
 
       color.a = 0.6f;
       if (Input.GetMouseButtonDown(0)) {
