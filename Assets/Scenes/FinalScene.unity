@@ -7924,6 +7924,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 426967644}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &432908085 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8315065836901158387, guid: ecbd81b68722eff44b7a446ace210608,
+    type: 3}
+  m_PrefabInstance: {fileID: 272792728931464550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &443565948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8785,6 +8791,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.02, z: 0.13}
   m_Center: {x: 0, y: 0, z: -0.0000000018626451}
+--- !u!23 &494403239 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8582950191234296396, guid: ecbd81b68722eff44b7a446ace210608,
+    type: 3}
+  m_PrefabInstance: {fileID: 272792728931464550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &501955079
 GameObject:
   m_ObjectHideFlags: 0
@@ -10524,6 +10536,12 @@ Transform:
   m_Father: {fileID: 1010481829}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!23 &613114000 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 7685942213776556623, guid: ecbd81b68722eff44b7a446ace210608,
+    type: 3}
+  m_PrefabInstance: {fileID: 272792728931464550}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &617259724
 GameObject:
   m_ObjectHideFlags: 0
@@ -31436,6 +31454,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: colored elf bar
       objectReference: {fileID: 0}
+    - target: {fileID: 7685942213776556623, guid: ecbd81b68722eff44b7a446ace210608,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0b6b350710e301745a6a5c463bcbf041, type: 2}
+    - target: {fileID: 8315065836901158387, guid: ecbd81b68722eff44b7a446ace210608,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92a05fdbe869e774d8519555843c887b, type: 2}
+    - target: {fileID: 8582950191234296396, guid: ecbd81b68722eff44b7a446ace210608,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 92a05fdbe869e774d8519555843c887b, type: 2}
     m_RemovedComponents:
     - {fileID: 654461141947046163, guid: ecbd81b68722eff44b7a446ace210608, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ecbd81b68722eff44b7a446ace210608, type: 3}
@@ -31463,7 +31496,10 @@ MonoBehaviour:
   dissectionVape: {fileID: 762523842}
   exitButton: {fileID: 2075937204}
   collectibles: {fileID: 300270964}
-  materialsToChange: []
+  materialsToChange:
+  - {fileID: 432908085}
+  - {fileID: 613114000}
+  - {fileID: 494403239}
 --- !u!65 &272792728931464553
 BoxCollider:
   m_ObjectHideFlags: 0
