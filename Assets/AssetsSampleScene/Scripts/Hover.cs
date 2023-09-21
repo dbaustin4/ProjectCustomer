@@ -37,7 +37,7 @@ public class Hover : MonoBehaviour {
     Color color = GetComponentInChildren<MeshRenderer>().material.color;
 
     hovering = false;
-    Debug.DrawRay(Camera.main.transform.position, ray.direction * 30.0f, Color.red, 3.0f);
+    //Debug.DrawRay(Camera.main.transform.position, ray.direction * 30.0f, Color.red, 3.0f);
 
     if (GetComponent<Collider>().Raycast(ray, out hit, 30f)) // 10f is max distance at which the effect works
     {
@@ -50,8 +50,8 @@ public class Hover : MonoBehaviour {
         }
         Inspection.SetActive(true);
         inspectionObj.Inspect(index);
-        Debug.Log(hit.collider.gameObject.name);
-        Debug.Log(index);
+        //Debug.Log(hit.collider.gameObject.name);
+        //Debug.Log(index);
  
         //var gob = hit.collider.gameObject;
         //var renderers = gob.GetComponentsInChildren<MeshRenderer>();
@@ -72,11 +72,11 @@ public class Hover : MonoBehaviour {
     if (materialsToChange.Count > 0) {
       if (hovering) {
         materialsToChange.ForEach(meshRenderer => 
-        meshRenderer.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 1, Time.deltaTime)));
+        meshRenderer.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 0.07f, 0.2f)));
       }
       else {
         materialsToChange.ForEach(material => 
-        material.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 0, Time.deltaTime)));
+        material.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 0, 0.2f)));
       }
     }
  
