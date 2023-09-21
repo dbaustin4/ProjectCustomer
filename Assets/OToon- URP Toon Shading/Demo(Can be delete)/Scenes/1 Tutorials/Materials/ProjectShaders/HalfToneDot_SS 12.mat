@@ -103,7 +103,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BrushLowerCut: 0
-    - _BrushSize: 1.5
+    - _BrushSize: 1.09
     - _BumpScale: 1
     - _Cull: 2
     - _Cutoff: 0.5

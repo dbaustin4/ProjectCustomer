@@ -129,7 +129,7 @@ Material:
     - _HalfToneIncludeReceivedShadow: 0
     - _HalfToneShape: 0
     - _HalfToneUvMode: 1
-    - _HalftoneFadeDistance: 45
+    - _HalftoneFadeDistance: 13.4
     - _HalftoneFadeToColor: 0
     - _HalftoneNoiseClip: 0
     - _HalftoneTilling: 8

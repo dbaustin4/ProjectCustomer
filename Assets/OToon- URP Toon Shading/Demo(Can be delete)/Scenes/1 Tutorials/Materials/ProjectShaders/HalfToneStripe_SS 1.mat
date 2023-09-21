@@ -149,7 +149,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BrushLowerCut: 0
-    - _BrushSize: 0.85
+    - _BrushSize: 1
     - _BumpScale: 1
     - _CameraDistanceImpact: 0
     - _CelExtraEnabled: 0
@@ -206,7 +206,7 @@ Material:
     - _HalfToneIncludeReceivedShadow: 0
     - _HalfToneShape: 1
     - _HalfToneUvMode: 1
-    - _HalftoneFadeDistance: 45
+    - _HalftoneFadeDistance: 17.9
     - _HalftoneFadeToColor: 0
     - _HalftoneNoiseClip: 0
     - _HalftoneTilling: 15
@@ -259,7 +259,7 @@ Material:
     - _ShadowEdgeSize: 0.05
     - _ShadowEdgeSizeExtra: 0.05
     - _Shininess: 0
-    - _SizeFalloff: 0.963
+    - _SizeFalloff: 1
     - _Smoothness: 0.592
     - _SmoothnessSource: 0
     - _SmoothnessTextureChannel: 0

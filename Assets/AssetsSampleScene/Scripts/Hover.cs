@@ -19,9 +19,11 @@ public class Hover : MonoBehaviour {
   [SerializeField]
   private Collectibles collectibles;
 
-  void Start() {
 
-  }
+
+
+    void Start() {
+    }
 
   void Update() {
     if (Inspection.active)
@@ -31,12 +33,12 @@ public class Hover : MonoBehaviour {
     RaycastHit hit;
 
     //making a new color for the box in order to make it transparent a lil cuz u can t just edit the alpha
-    Color color = GetComponent<MeshRenderer>().material.color;
+    Color color = GetComponentInChildren<MeshRenderer>().material.color;
 
 
     if (GetComponent<Collider>().Raycast(ray, out hit, 30f)) // 10f is max distance at which the effect works
     {
-      //Debug.Log("hovering over " + gameObject.name);
+      Debug.Log("hovering over " + gameObject.name);
 
       color.a = 0.6f;
       if (Input.GetMouseButtonDown(0)) {
