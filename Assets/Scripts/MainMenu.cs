@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-    [SerializeField] private PauseMenu pauseMenu;
+    [SerializeField] private GameObject settings    ;
 
     public void PlayGame()
     {
@@ -14,7 +14,7 @@ public class MainMenu : MonoBehaviour
 
     public void Settings()
     {
-        pauseMenu.Pause();
+        settings.SetActive(true);
     }
 
     public void QuitGame()

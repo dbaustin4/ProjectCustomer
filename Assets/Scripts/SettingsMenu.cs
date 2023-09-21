@@ -5,14 +5,20 @@ using UnityEngine;
 public class SettingsMenu : MonoBehaviour
 {
     [SerializeField] GameObject settingsMenu;
-    void Start()
+
+    public bool isSettingsOpen = false;
+
+
+    public void SettingsOpen()
     {
-        
+        settingsMenu.SetActive(true);
+        isSettingsOpen = true;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SettingsClose()
     {
-        
+        settingsMenu.SetActive(false);
+        isSettingsOpen = false;
+
     }
 }
