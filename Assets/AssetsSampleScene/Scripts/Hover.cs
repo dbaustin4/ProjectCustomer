@@ -18,33 +18,47 @@ public class Hover : MonoBehaviour {
   private GameObject exitButton;
   [SerializeField]
   private Collectibles collectibles;
+  [SerializeField]
+  private List<MeshRenderer> materialsToChange;
 
+  bool hovering = false;
 
-
-
-    void Start() {
+  void Start() {
     }
 
   void Update() {
-    if (Inspection.active)
+    if (Inspection.activeSelf)
       return;
-    Ray ray = Camera.main.GetComponent<Camera>().ScreenPointToRay(Input.mousePosition);
+    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
     // makes a ray that aims at what ur mouse is over .transform.parent  gameObject.transform.GetChild(0).gameObject
     RaycastHit hit;
 
     //making a new color for the box in order to make it transparent a lil cuz u can t just edit the alpha
     Color color = GetComponentInChildren<MeshRenderer>().material.color;
 
+    hovering = false;
+    Debug.DrawRay(Camera.main.transform.position, ray.direction * 30.0f, Color.red, 3.0f);
 
     if (GetComponent<Collider>().Raycast(ray, out hit, 30f)) // 10f is max distance at which the effect works
     {
       Debug.Log("hovering over " + gameObject.name);
-
+      hovering = true;
       color.a = 0.6f;
       if (Input.GetMouseButtonDown(0)) {
-        if (gameObject != dissectionVape) exitButton.SetActive(true);
+        if (gameObject != dissectionVape) { 
+          exitButton.SetActive(true);
+        }
         Inspection.SetActive(true);
         inspectionObj.Inspect(index);
+        Debug.Log(hit.collider.gameObject.name);
+        Debug.Log(index);
+ 
+        //var gob = hit.collider.gameObject;
+        //var renderers = gob.GetComponentsInChildren<MeshRenderer>();
+        //foreach(Renderer r in renderers) {
+        //  r.material.SetFloat("_Lerp", 1);
+        //}
+
         if (gameObject.CompareTag("Collectible")) {
           exitButton.SetActive(false);
         }
@@ -55,6 +69,16 @@ public class Hover : MonoBehaviour {
 
     GetComponent<MeshRenderer>().material.color = color;
 
+    if (materialsToChange.Count > 0) {
+      if (hovering) {
+        materialsToChange.ForEach(meshRenderer => 
+        meshRenderer.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 1, Time.deltaTime)));
+      }
+      else {
+        materialsToChange.ForEach(material => 
+        material.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 0, Time.deltaTime)));
+      }
+    }
  
   }
 }
