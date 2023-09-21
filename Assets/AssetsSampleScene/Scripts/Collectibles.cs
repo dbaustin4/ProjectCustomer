@@ -31,6 +31,8 @@ public class Collectibles : MonoBehaviour {
 
   private void Update() {
     CheckObject();
+
+    if (amountCollected == collectableAmount) doneCollecting = true;
   }
 
   private void CheckObject() {
@@ -52,10 +54,6 @@ public class Collectibles : MonoBehaviour {
               amountCollected += 1;
               TeleportToTarget(vapePieces[i], i);
               vapePieces[i] = null;
-            }
-            else if (amountCollected == collectableAmount) {
-              Debug.Log("all pieces collected");
-              doneCollecting = true;
             }
             break; //end loop after finding clicked piece
           }
