@@ -50,15 +50,7 @@ public class Hover : MonoBehaviour {
         }
         Inspection.SetActive(true);
         inspectionObj.Inspect(index);
-        //Debug.Log(hit.collider.gameObject.name);
-        //Debug.Log(index);
- 
-        //var gob = hit.collider.gameObject;
-        //var renderers = gob.GetComponentsInChildren<MeshRenderer>();
-        //foreach(Renderer r in renderers) {
-        //  r.material.SetFloat("_Lerp", 1);
-        //}
-
+        
         if (gameObject.CompareTag("Collectible")) {
           exitButton.SetActive(false);
         }
