@@ -53,7 +53,7 @@ public class Collectibles : MonoBehaviour {
               TeleportToTarget(vapePieces[i], i);
               vapePieces[i] = null;
             }
-            else {
+            else if (amountCollected == collectableAmount) {
               Debug.Log("all pieces collected");
               doneCollecting = true;
             }
