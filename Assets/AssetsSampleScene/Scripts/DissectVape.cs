@@ -12,6 +12,8 @@ public class DissectVape : MonoBehaviour {
   private float flySpeed = 1000f; //how fast the obj flies away
   [SerializeField]
   private GameObject exitButton; //exit button
+  [SerializeField]
+  private Hover killHover; //to deactivate hover once dissected
 
   private AudioSource audioSource; //audio 
   private bool canDissect = true; //bool to check if we can dissect
@@ -41,6 +43,7 @@ public class DissectVape : MonoBehaviour {
       }
       else {
         exitButton.SetActive(true); //make exit button appear again
+        killHover.enabled = false; //disable Hover script component
       }
     }
   }
