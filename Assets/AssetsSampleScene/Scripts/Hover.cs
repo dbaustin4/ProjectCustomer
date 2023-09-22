@@ -64,7 +64,7 @@ public class Hover : MonoBehaviour {
     if (materialsToChange.Count > 0) {
       if (hovering) {
         materialsToChange.ForEach(meshRenderer => 
-        meshRenderer.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 0.1f, 0.2f)));
+        meshRenderer.material.SetFloat("_Lerp", Mathf.Lerp(materialsToChange[0].material.GetFloat("_Lerp"), 0.15f, 0.2f)));
       }
       else {
         materialsToChange.ForEach(material => 
