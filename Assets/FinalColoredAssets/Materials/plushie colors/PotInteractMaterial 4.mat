@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: PotInteractMaterial 3
+  m_Name: PotInteractMaterial 4
   m_Shader: {fileID: -6465566751694194690, guid: 72751898adfb7324a95c45cdb45b28dd,
     type: 3}
   m_ValidKeywords: []
@@ -39,7 +39,7 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     m_Colors:
-    - _Color: {r: 0.4245283, g: 0.3882759, b: 0.25792095, a: 1}
+    - _Color: {r: 0, g: 0, b: 0, a: 1}
     - _Highlight: {r: 2.6390157, g: 2.6390157, b: 2.6390157, a: 1}
   m_BuildTextureStacks: []
 --- !u!114 &1000308617943652423
